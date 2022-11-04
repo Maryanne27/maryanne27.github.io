@@ -1,0 +1,133 @@
+*{
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+body{min-height: 100vh;
+    background-color:#4fa23c;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.wrapper{
+  background-color: aliceblue;
+  box-sizing: content-box;
+   width:20.87em;
+   padding: 2em 3em;
+  border-radius: 0.6em;
+  box-shadow: rgba(86,66,0,0.2) 0 0.9em 2.8em;
+} 
+section{
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    grid-template-rows: repeat(4,auto);
+    grid-gap: 0.6em;
+    perspective: 800px;
+}
+.stats-container{
+    display: flex;
+    margin-bottom: 1.2em;
+   align-items: center;
+   justify-content: space-between;
+}
+.stats-container span  {
+    font-weight: bold;
+}
+.stats-container h1{
+    font-size: 1em;
+}
+.stats-container h1 span{
+    font-weight: normal;
+}
+.card-container{
+    position: relative;
+    transform-style: preserve-3d;
+    transition: all 2s cubic-bezier(0.175,0.885,0.32,1.275);
+    width: 5em;
+    height: 5em;
+    cursor: pointer;
+}
+
+.card-before,
+.card-after {
+    position: absolute;
+    border-radius: 5px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #000000;
+    transition: transform 0.7s ease-out;
+    pointer-events: none;
+}
+
+.card-before{
+    background-color: #f4c531;
+    font-size: 2.8em;
+    font-weight: 600;
+    backface-visibility: hidden;
+}
+
+.toggleCard{
+    transform: rotateY(180deg); 
+}
+
+
+.controls-container{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    background-color: #f4c531;
+    top: 0;
+    
+}
+button{
+    border: none;
+    border-radius: 0.3em;
+    padding: 1em 1.1em;
+    cursor: pointer;
+}
+#stop{
+    font-size: 1.1em;
+    color: #ffffff;
+    background-color: #000000;
+    display: block;
+}
+.controls-container button {
+    font-size: 1.3em;
+    box-shadow: rgba(86,66,0,0.2) 0 0.6em 2em;
+}
+.hide{
+    display: none;
+}
+#result{
+    text-align: center;
+}
+#result h2{
+    font-size: 2.5em;
+}
+#result h4{
+      font-size: 1.8em;
+      margin: 0.6em 0 1em 0;
+}
+
+
+@media screen and (max-width:450px){
+   
+    .wrapper{
+         width:16.87em;
+         padding: 2em 2.5em;
+      } 
+
+    .card-container{
+        width: 4em;
+        height: 4em;
+    }
+}
